@@ -2,6 +2,7 @@ import Image from "next/image";
 import StarIcon from "@/public/svg/StarIcon.svg";
 
 export default function Home() {
+
   return (
     <main className="flex justify-center items-center w-full h-full">
       <div className="w-[500px] flex flex-col gap-4">
