@@ -24,6 +24,7 @@ const config: Config = {
       },
       fontFamily: {
         orbitron: ['var(--font-orbitron)'],
+        titillium: ['var(--font-titillium)'],
       },
     },
   },

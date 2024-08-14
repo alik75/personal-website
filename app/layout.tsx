@@ -41,6 +41,28 @@ const orbitronFont = localFont({
   variable: "--font-orbitron",
 });
 
+const titilliumFont = localFont({
+  src: [
+    {
+      path: "../public/fonts/TitilliumWeb-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/TitilliumWeb-SemiBold.ttf",
+      weight: "600",
+    },
+    {
+      path: "../public/fonts/TitilliumWeb-Bold.ttf",
+      weight: "700",
+    },
+    {
+      path: "../public/fonts/TitilliumWeb-Black.ttf",
+      weight: "900",
+    },
+  ],
+  variable: "--font-titillium",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${orbitronFont.variable} font-orbitron`}>
+      <body className={`${orbitronFont.variable} ${titilliumFont.variable} font-orbitron`}>
         <Container>{children}</Container>
         </body>
     </html>
