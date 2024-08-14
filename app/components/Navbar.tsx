@@ -28,7 +28,7 @@ const Navbar = () => {
     ];
 
   return (
-    <nav className='absolute bottom-6 left-1/2 -translate-x-1/2 bg-gray-dark rounded-full'>
+    <nav className='absolute bottom-6 left-1/2 -translate-x-1/2 bg-gray-dark rounded-full z-[3]'>
         <ul className='px-16 py-5 flex flex-row justify-around items-center gap-12'>
             {menuItems.map((item,idx)=><li className='text-xl font-bold text-white hover:text-yellow transition-all' key={idx}><Link href={item.link}>{item.title}</Link></li>)}
         </ul>
