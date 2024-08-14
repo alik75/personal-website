@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
+import Container from "./components/Container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,7 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${orbitronFont.variable} font-orbitron`}>{children}</body>
+      <body className={`${orbitronFont.variable} font-orbitron`}>
+        <Container>{children}</Container>
+        </body>
     </html>
   );
 }
