@@ -7,16 +7,18 @@ interface StatisticItem {
 
 interface Props {
   items: StatisticItem[];
+  rtl?: boolean
 }
 
-const StatisticInfo = ({ items }: Props) => {
+const StatisticInfo = ({ items, rtl = false  }: Props) => {
   
 
   return (
     <div className="flex flex-col gap-2">
       {items.map((item, idx) => (
-        <span className="flex flex-row gap-2 items-center">
+        <span className={`flex ${rtl?"flex-row-reverse":"flex-row"} gap-2 items-center`}>
           <span className="text-sm text-yellow">{item.key}</span>
+          <small className="text-yellow">~</small>
           <span className="text-sm font-bold text-white">{item.value}</span>
         </span>
       ))}
