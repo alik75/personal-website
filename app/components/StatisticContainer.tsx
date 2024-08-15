@@ -1,11 +1,6 @@
 "use client";
 import React, { ReactNode, useEffect, useState } from "react";
 import StatisticInfo from "./StatisticInfo";
-import dynamic from "next/dynamic";
-
-// const StatisticInfo =dynamic(() => import('./StatisticInfo'), {
-//   loading: () => <p>Loading...</p>,
-// })
 
 interface ClientInfo {
   browser: {
@@ -97,7 +92,7 @@ const StatisticContainer = ({ children, info }: Props) => {
           ]}
         ></StatisticInfo>
       </div>
-      <div className="relative flex flex-col items-center w-full h-[calc(100%-96px)] z-[2]">
+      <div className="relative flex flex-col items-center w-full md:h-[calc(100%-96px)] h-[calc(100%-83px)] z-[2]">
         {children}
       </div>
       <div className="relative flex justify-between z-[2]">

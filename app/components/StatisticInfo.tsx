@@ -14,12 +14,12 @@ const StatisticInfo = ({ items, rtl = false  }: Props) => {
   
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col md:gap-2 gap-1">
       {items.map((item, idx) => (
-        <span className={`flex ${rtl?"flex-row-reverse":"flex-row"} gap-2 items-center`}>
-          <span className="text-sm text-yellow">{item.key}</span>
+        <span className={`flex ${rtl?"flex-row-reverse":"flex-row"} md:gap-2 gap-1 items-center`}>
+          <span className="md:text-sm sm:text-xs text-[.5rem] text-yellow">{item.key}</span>
           <small className="text-yellow">~</small>
-          <span className="text-sm font-bold text-white">{item.value}</span>
+          <span className="md:text-sm sm:text-xs text-[.5rem] font-bold text-white">{item.value}</span>
         </span>
       ))}
     </div>
