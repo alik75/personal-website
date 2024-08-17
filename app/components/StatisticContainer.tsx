@@ -36,7 +36,7 @@ const StatisticContainer = ({ children, info }: Props) => {
   // fetch ip info from third party API
   useEffect(() => {
     if (!fetchedIpInfo) {
-      fetch("http://ip-api.com/json/"+info.ip, {
+      fetch("http://ip-api.com/json/62.60.132.36", {
         headers: {
           "Content-Type": "application/json",
           Accept:
