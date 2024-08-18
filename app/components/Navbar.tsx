@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <>
       <span onClick={()=>setMobileMenuOpen(!mobileMenuOpen)} className="rounded-full h-14 w-14 p-3 bg-gray-dark lg:hidden flex items-center justify-center absolute left-1/2 -translate-x-1/2 bottom-10 z-[3]">
-        <Image priority alt="Star Icon" src={MenuIcon}></Image>
+       <MenuIcon></MenuIcon>
       </span>
       <nav className={`flex absolute lg:bottom-6 ${mobileMenuOpen?"bottom-28":"-bottom-full"} left-1/2 -translate-x-1/2 bg-gray-dark lg:rounded-full rounded-2xl lg:bg-opacity-100 bg-opacity-50 backdrop-blur-xl z-[3] transition-all ease-in-out`}>
         <ul className="px-16 py-5 flex lg:flex-row flex-col justify-around items-center lg:gap-12 gap-6">
@@ -45,7 +45,7 @@ const Navbar = () => {
               className={`text-xl font-bold ${pathname==item.link?"text-yellow":"text-white"} hover:text-yellow transition-all`}
               key={idx}
             >
-              <Link href={item.link}>{item.title}</Link>
+              <Link href={item.link} onClick={()=>setMobileMenuOpen(false)}>{item.title}</Link>
             </li>
           ))}
         </ul>

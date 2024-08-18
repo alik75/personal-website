@@ -11,7 +11,7 @@ export default function Home() {
         <div className="flex flex-row items-center md:gap-5 gap-2 mt-4">
           <h2 className="font-titillium lg:text-2xl text-md text-yellow">Web Developer</h2>
           <span>
-            <Image priority alt="Star Icon" src={StarIcon}></Image>
+            <StarIcon></StarIcon>
           </span>
           <h2 className="font-titillium lg:text-2xl text-md text-yellow">
             Software Developer

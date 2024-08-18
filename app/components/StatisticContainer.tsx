@@ -92,7 +92,7 @@ const StatisticContainer = ({ children, info }: Props) => {
           ]}
         ></StatisticInfo>
       </div>
-      <div className="relative flex flex-col items-center w-full md:h-[calc(100%-96px)] h-[calc(100%-83px)] z-[2]">
+      <div className="relative flex flex-col items-center w-full overflow-auto md:pb-0 pb-10 md:h-[calc(100%-96px)] h-[calc(100%-83px)] z-[2]">
         {children}
       </div>
       <div className="relative flex justify-between z-[2]">
