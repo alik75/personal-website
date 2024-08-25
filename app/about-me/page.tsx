@@ -4,7 +4,7 @@ import EmailIcon from "@/public/svg/EmailIcon.svg";
 import LinkedinIcon from "@/public/svg/LinkedinIcon.svg";
 import GithubIcon from "@/public/svg/GithubIcon.svg";
 import GitlabIcon from "@/public/svg/GitlabIcon.svg";
-import StackoverflowIcon from "@/public/svg/StackoverflowIcon.svg";
+import StackOverflowIcon from "@/public/svg/StackOverflowIcon.svg";
 import React from "react";
 import Button from "../components/Button";
 
@@ -58,7 +58,7 @@ const AboutMePage = () => {
               className="flex items-center gap-1"
               href={"https://stackoverflow.com/users/14882236/ali-katiraie"}
             >
-              <StackoverflowIcon className={"[&>path]:stroke-white scale-75"}></StackoverflowIcon>Stack Overflow
+              <StackOverflowIcon className={"[&>path]:stroke-white scale-75"}></StackOverflowIcon>Stack Overflow
             </Link>
           </li>
         </ul>
