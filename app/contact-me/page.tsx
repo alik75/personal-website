@@ -5,7 +5,7 @@ import EmailIcon from "@/public/svg/EmailIcon.svg";
 import LinkedinIcon from "@/public/svg/LinkedinIcon.svg";
 import GithubIcon from "@/public/svg/GithubIcon.svg";
 import GitlabIcon from "@/public/svg/GitlabIcon.svg";
-import StackoverflowIcon from "@/public/svg/StackoverflowIcon.svg";
+import StackOverflowIcon from "@/public/svg/StackOverflowIcon.svg";
 import Button from "../components/Button";
 import ContactForm from "../components/ContactForm";
 
@@ -88,9 +88,9 @@ const ContactMe = () => {
               className="flex items-center gap-1"
               href={"https://stackoverflow.com/users/14882236/ali-katiraie"}
             >
-              <StackoverflowIcon
+              <StackOverflowIcon
                 className={"[&>path]:stroke-white scale-75"}
-              ></StackoverflowIcon>
+              ></StackOverflowIcon>
               Stack Overflow
             </Link>
           </li>
