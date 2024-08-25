@@ -16,10 +16,10 @@ interface ClientInfo {
 
 interface IpInfo {
   city: string;
-  country: string;
+  country_name: string;
   status: string;
-  lat: string;
-  lon: string;
+  latitude: string;
+  longitude: string;
 }
 
 interface Props {
@@ -36,7 +36,7 @@ const StatisticContainer = ({ children, info }: Props) => {
   // fetch ip info from third party API
   useEffect(() => {
     if (!fetchedIpInfo) {
-      fetch("http://ip-api.com/json/62.60.132.36", {
+      fetch("https://api.ipgeolocation.io/ipgeo?apiKey=f31a9cacb7b14049873f92fc055579f6&ip=8.8.8.8", {
         headers: {
           "Content-Type": "application/json",
           Accept:
@@ -45,7 +45,6 @@ const StatisticContainer = ({ children, info }: Props) => {
       })
         .then((res) => res.json())
         .then((res: IpInfo) => {
-          console.log("rere", res);
           setFetchedIpInfo(true);
           if (res.status == "success") {
             setIpInfo(res);
@@ -87,8 +86,8 @@ const StatisticContainer = ({ children, info }: Props) => {
         <StatisticInfo
           rtl
           items={[
-            { key: "Longtiude", value: ipInfo ? ipInfo.lon : "Unknown" },
-            { key: "Latitude", value: ipInfo ? ipInfo.lat : "Unknown" },
+            { key: "Longtiude", value: ipInfo ? ipInfo.longitude : "Unknown" },
+            { key: "Latitude", value: ipInfo ? ipInfo.latitude : "Unknown" },
           ]}
         ></StatisticInfo>
       </div>
@@ -116,7 +115,7 @@ const StatisticContainer = ({ children, info }: Props) => {
             { key: "IP", value: info.ip },
             {
               key: "Location",
-              value: ipInfo ? ipInfo.country + "/" + ipInfo.city : "Unknown",
+              value: ipInfo ? ipInfo.country_name + "/" + ipInfo.city : "Unknown",
             },
           ]}
         ></StatisticInfo>
