@@ -66,12 +66,12 @@ const AboutMePage = () => {
       <div className="flex flex-col md:w-1/2 w-full gap-5 flex-none md:border-l md:border-b-0 border-l-0 border-b border-yellow md:pl-8 md:pb-0 pl-0 pb-6 md:mb-0 mb-4">
         <h1 className="md:text-4xl text-2xl text-white md:text-left text-center font-bold">About Me</h1>
         <p className="text-justify  md:text-lg xl:text-2xl text-white font-titillium">
-          With over <strong>5 years'</strong> experience in <strong>web development</strong>, <strong>project management</strong>,
+          With over <strong>5 years&apos;</strong> experience in <strong>web development</strong>, <strong>project management</strong>,
           and mentoring, I contribute a wealth of experience across diverse
           teams and projects. Thriving on challenges and committed to delivering
           flawless solutions, I leverage my analytical abilities and diverse
           skillset to optimize results. A lifelong learner who embraces
-          complexity, I'm eager to contribute my skills and enthusiasm to a
+          complexity, I&apos;m eager to contribute my skills and enthusiasm to a
           company that fosters continuous growth.
         </p>
       </div>

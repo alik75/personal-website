@@ -98,7 +98,7 @@ const ContactMe = () => {
       </div>
       <div className="flex flex-col md:w-1/2 w-full gap-5 flex-none md:border-l md:border-b-0 border-l-0 border-b border-yellow md:pl-8 md:pb-0 pl-0 pb-6 md:mb-0 mb-4">
       <h1 className="md:text-2xl text-xl text-white md:text-left text-center font-bold">
-          Let's make something amazing
+          Let&apos;s make something amazing
         </h1>
         <div className="bg-white bg-opacity-10 p-5 rounded-3xl backdrop-blur-sm max-w-[400px]">
         <ContactForm></ContactForm>
