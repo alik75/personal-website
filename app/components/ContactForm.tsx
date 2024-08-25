@@ -20,7 +20,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center gap-5">
         <Input name="name" wrapperClassName="w-full" placeholder="Your Name">
         </Input>
-        <Input name="email" wrapperClassName="w-full" placeholder="Your Name">
+        <Input name="email" wrapperClassName="w-full" placeholder="Your Email Address">
         </Input>
         <Button className="w-full" label="Submit"></Button>
       </form>
