@@ -11,16 +11,15 @@ interface ClientInfo {
     name: string;
     version: string;
   };
-  ip: string;
+  geo:{
+    ip: string;
+    country:string;
+    city:string;
+    long:string;
+    lat:string;
+  }
 }
 
-interface IpInfo {
-  city: string;
-  country_name: string;
-  status: string;
-  latitude: string;
-  longitude: string;
-}
 
 interface Props {
   children: ReactNode;
@@ -29,32 +28,8 @@ interface Props {
 
 const StatisticContainer = ({ children, info }: Props) => {
   const [fetchedIpInfo, setFetchedIpInfo] = useState<boolean>(false);
-  const [ipInfo, setIpInfo] = useState<IpInfo>();
   const [initTime, setInitTime] = useState<Date>(new Date());
   const [timeSpend, setTimeSpend] = useState<number>(0);
-
-  // fetch ip info from third party API
-  useEffect(() => {
-    if (!fetchedIpInfo) {
-      fetch("https://api.ipgeolocation.io/ipgeo?apiKey=f31a9cacb7b14049873f92fc055579f6&ip=8.8.8.8", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept:
-            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        },
-      })
-        .then((res) => res.json())
-        .then((res: IpInfo) => {
-          setFetchedIpInfo(true);
-          if (res.status == "success") {
-            setIpInfo(res);
-          }
-        })
-        .catch((err) => {
-          console.error("Error in fetch ip info", err);
-        });
-    }
-  }, []);
 
   const millisToMinutesAndSeconds = (ms: number) => {
     let minutes: number = Math.floor(ms / 60000);
@@ -86,8 +61,8 @@ const StatisticContainer = ({ children, info }: Props) => {
         <StatisticInfo
           rtl
           items={[
-            { key: "Longtiude", value: ipInfo ? ipInfo.longitude : "Unknown" },
-            { key: "Latitude", value: ipInfo ? ipInfo.latitude : "Unknown" },
+            { key: "Longtiude", value: info.geo.long },
+            { key: "Latitude", value: info.geo.lat },
           ]}
         ></StatisticInfo>
       </div>
@@ -112,10 +87,10 @@ const StatisticContainer = ({ children, info }: Props) => {
         <StatisticInfo
           rtl
           items={[
-            { key: "IP", value: info.ip },
+            { key: "IP", value: info.geo.ip },
             {
               key: "Location",
-              value: ipInfo ? ipInfo.country_name + "/" + ipInfo.city : "Unknown",
+              value: info.geo.country? info.geo.country + "/" + info.geo.city:"",
             },
           ]}
         ></StatisticInfo>
