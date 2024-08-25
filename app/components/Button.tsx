@@ -3,7 +3,7 @@ import React from "react";
 
 interface Props {
   label: string;
-  className: string;
+  className?: string;
   link?: string;
 }
 

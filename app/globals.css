@@ -31,3 +31,26 @@ body {
     text-wrap: balance;
   }
 }
+
+/* ============== Style Scroll Bar ===================== */
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  padding: -10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3D3D3D;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #EFF1C5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
+}
