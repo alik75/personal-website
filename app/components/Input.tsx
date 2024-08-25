@@ -43,7 +43,7 @@ const Input = ({
           {...register(name, {
             required: required ? "This field is required" : "",
           })}
-          className={`md:py-2 py-4 px-4 md:text-base text-sm text-white bg-transparent placeholder:text-gray-light outline-none w-full`}
+          className={`md:py-2 py-4 px-6 md:text-base text-sm text-white bg-transparent placeholder:text-gray-light outline-none w-full`}
           disabled={disabled}
           autoComplete="off"
           {...rest}
