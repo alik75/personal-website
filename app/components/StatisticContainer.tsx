@@ -66,7 +66,7 @@ const StatisticContainer = ({ children, info }: Props) => {
   // calculate count up timer
   useEffect(() => {
     let id = setInterval(() => {
-      let diff = new Date() - initTime;
+      let diff = (new Date()).valueOf() - initTime.valueOf();
       setTimeSpend(diff);
     }, 1000);
     return () => clearInterval(id);
