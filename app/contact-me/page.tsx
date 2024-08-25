@@ -11,8 +11,8 @@ import ContactForm from "../components/ContactForm";
 
 const ContactMe = () => {
   return (
-    <div className="flex md:flex-row flex-col items-stretch gap-2 md:px-20 md:py-10 py-2 w-full">
-      <div className="flex flex-col items-center justify-between md:w-1/2 w-full gap-2 flex-none">
+    <div className="flex md:flex-row flex-col-reverse items-stretch gap-5 md:px-20 md:py-10 py-2 w-full">
+      <div className="flex flex-col items-center md:w-1/2 w-full gap-5 flex-none">
        
         <div className="flex md:flex-row flex-col md:items-start items-center gap-4">
           <Image
@@ -96,8 +96,8 @@ const ContactMe = () => {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col md:w-1/2 w-full gap-5 flex-none md:border-l md:border-t-0 border-l-0 border-t border-yellow md:pl-8 md:pt-0 pl-0 pt-6 md:mt-0 mt-4">
-      <h1 className="md:text-4xl text-2xl text-white md:text-left text-center font-bold">
+      <div className="flex flex-col md:w-1/2 w-full gap-5 flex-none md:border-l md:border-b-0 border-l-0 border-b border-yellow md:pl-8 md:pb-0 pl-0 pb-6 md:mb-0 mb-4">
+      <h1 className="md:text-2xl text-xl text-white md:text-left text-center font-bold">
           Let's make something amazing
         </h1>
         <div className="bg-white bg-opacity-10 p-5 rounded-3xl backdrop-blur-sm max-w-[400px]">

@@ -3,6 +3,7 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Input from "./Input";
 import Button from "./Button";
+import TextArea from "./TextArea";
 
 interface FormValues {
   name: string;
@@ -22,6 +23,7 @@ const ContactForm = () => {
         </Input>
         <Input name="email" wrapperClassName="w-full" placeholder="Your Email Address">
         </Input>
+        <TextArea name="message"  wrapperClassName="w-full" placeholder="Your Message"></TextArea>
         <Button className="w-full" label="Submit"></Button>
       </form>
     </FormProvider>
