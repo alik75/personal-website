@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import Input from "./Input";
 
 interface FormValues {
   name: string;
@@ -15,7 +16,10 @@ const ContactForm = () => {
   const onSubmit = async ({ name, email, message }: FormValues) => {};
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}></form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Input name="name" placeholder="Your Name">
+        </Input>
+      </form>
     </FormProvider>
   );
 };
