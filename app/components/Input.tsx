@@ -6,6 +6,7 @@ interface Props{
     type?:string,
     placeholder?:string,
     className?:string,
+    wrapperClassName?:string,
     validatorRegex?:string,
     errorMsg?:string,
     required?:boolean,
@@ -18,6 +19,7 @@ const Input = ({
   type = "text",
   placeholder = "Enter some text...",
   className = "",
+  wrapperClassName = "",
   validatorRegex = "",
   errorMsg = "",
   required = false,
@@ -29,7 +31,7 @@ const Input = ({
     formState: { errors },
   } = useFormContext<FieldValues>();
   return (
-    <div className={"relative"}>
+    <div className={"relative "+wrapperClassName}>
       <div
         className={`flex flex-row items-center h-11 w-full bg-gray-light bg-opacity-50 ${
           errors && errors[name] ? "border-b-2 border-red" : ""

@@ -100,7 +100,7 @@ const ContactMe = () => {
       <h1 className="md:text-4xl text-2xl text-white md:text-left text-center font-bold">
           Let's make something amazing
         </h1>
-        <div className="bg-black bg-opacity-50 p-5 rounded-3xl backdrop-blur-sm">
+        <div className="bg-black bg-opacity-50 p-5 rounded-3xl backdrop-blur-sm max-w-[400px]">
         <ContactForm></ContactForm>
           </div></div>
     </div>
