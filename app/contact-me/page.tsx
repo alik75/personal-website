@@ -7,6 +7,7 @@ import GithubIcon from "@/public/svg/GithubIcon.svg";
 import GitlabIcon from "@/public/svg/GitlabIcon.svg";
 import StackoverflowIcon from "@/public/svg/StackoverflowIcon.svg";
 import Button from "../components/Button";
+import ContactForm from "../components/ContactForm";
 
 const ContactMe = () => {
   return (
@@ -100,7 +101,7 @@ const ContactMe = () => {
           Let's make something amazing
         </h1>
         <div className="bg-black bg-opacity-50 p-5 rounded-3xl backdrop-blur-sm">
-
+        <ContactForm></ContactForm>
           </div></div>
     </div>
   );
