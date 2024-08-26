@@ -53,7 +53,7 @@ const ProjectPage = ({ params }: any) => {
           <span className="text-base text-white font-bold">Tech use:</span>
           <ul className="flex items-center flex-wrap gap-3 mt-4">
             {currentProject.techs.map((item: string, idx: number) => (
-              <li className="text-yellow font-titillium text-sm border-yellow border rounded-md px-2 py-1">
+              <li key={idx} className="text-yellow font-titillium text-sm border-yellow border rounded-md px-2 py-1">
                 {item}
               </li>
             ))}
