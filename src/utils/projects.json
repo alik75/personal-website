@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Maxeo",
+        "slug":"maxeo",
+        "image":"/images/projects/maxeo.jpg",
+        "url":"https://maxeo.io",
+        "desc":"SEO analysis engine specially in Persian language",
+        "techs":["Laravel","Node.js","Express.js","Next.js","Reactjs","Mongodb","Mysql","Python","Django"]
+    },
+    {
+        "name":"Polvar",
+        "slug":"polvar",
+        "image":"/images/projects/polvar.jpg",
+        "url":"https://polvar.com",
+        "desc":"Mobile & Accessories Shop",
+        "techs":["Laravel","Next.js","Reactjs","Mongodb","Docker","Tailwind"]
+    },
+    {
+        "name":"Davinciblanch",
+        "slug":"davinci-blanch",
+        "image":"/images/projects/davinci.jpg",
+        "url":"https://davinciblanch.com",
+        "desc":"Dental whitening treatments",
+        "techs":["Laravel","JavaScript","jQuery","Bootstrap"]
+    }
+]

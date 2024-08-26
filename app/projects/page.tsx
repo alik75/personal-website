@@ -1,24 +1,18 @@
 import React from "react";
-import projects from "@/src/utils/data/projects.json";
+import projects from "@/src/utils/projects.json";
 import Image from "next/image";
 import Link from "next/link";
-
-interface ProjectItem {
-  name: string;
-  image: string;
-  desc: string;
-  url: string;
-}
+import { ProjectItem } from "@/src/utils/interfaces";
 
 const ProjectsPage = () => {
   return (
     <div>
-      <h1 className="md:text-6xl text-xl font-bold text-white mb-10 text-center">
+      <h1 className="md:text-4xl text-xl font-bold text-white mb-10 text-center">
         Project Showcase
       </h1>
       <div className="flex flex-row flex-wrap items-center justify-center gap-10">
         {projects.map((item: ProjectItem, idx: number) => (
-          <Link target="_blank" href={item.url} className="relative md:w-96 md:h-96 w-56 h-56 rounded-3xl overflow-hidden group cursor-pointer">
+          <Link target="_blank" href={"/project/"+item.slug} className="relative md:w-96 md:h-96 w-56 h-56 rounded-3xl overflow-hidden group cursor-pointer">
             <Image
               objectFit="cover"
               objectPosition="center"
