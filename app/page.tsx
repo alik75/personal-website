@@ -1,5 +1,10 @@
 import Image from "next/image";
 import StarIcon from "@/public/svg/StarIcon.svg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates:{canonical:"https://alikatiraei.com"}
+}
 
 export default function Home() {
 
