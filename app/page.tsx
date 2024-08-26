@@ -9,6 +9,26 @@ export const metadata: Metadata = {
 export default function Home() {
 
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:`{
+			"@context": "http://www.schema.org",
+			"@type": "person",
+			"name": "Ali Katiraei",
+			"jobTitle": "Software Developer",
+			"url": "https://alikatiraei.com",
+			"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Isfahan, IRAN",
+			"addressLocality": "Isfahan",
+			"addressRegion": "Isfahan",
+			"addressCountry": "IRAN"
+			},
+			"email": "alikatiraei96@gmail.com",
+			"telephone": "+989363147145",
+			"birthDate": "1996-08-23"
+		}`}}> 
+		
+	</script>
     <main className="flex justify-center items-center w-full h-full">
       <div className="w-[500px] flex flex-col lg:items-start items-center gap-4">
         <span className="text-white lg:text-5xl text-4xl md:mr-auto">Hi, I am</span>
@@ -24,5 +44,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   );
 }
