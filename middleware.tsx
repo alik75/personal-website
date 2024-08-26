@@ -44,11 +44,11 @@ export async function middleware(request: NextRequest) {
 
 
   let data :IpInfo;
-  data=await (fetch("https://api.ipgeolocation.io/ipgeo?apiKey=f31a9cacb7b14049873f92fc055579f6&ip="+ip).then(res=>res.json()).catch((err)=>console.log("third api error",err)))
-  clientInfo.geo.country = data ? data.country_name : "";
-  clientInfo.geo.city = data ? data.city : "";
-  clientInfo.geo.lat = data ? data.latitude : "";
-  clientInfo.geo.long = data ? data.longitude : "";
+  // data=await (fetch("https://api.ipgeolocation.io/ipgeo?apiKey=f31a9cacb7b14049873f92fc055579f6&ip="+ip).then(res=>res.json()).catch((err)=>console.log("third api error",err)))
+  // clientInfo.geo.country = data ? data.country_name : "";
+  // clientInfo.geo.city = data ? data.city : "";
+  // clientInfo.geo.lat = data ? data.latitude : "";
+  // clientInfo.geo.long = data ? data.longitude : "";
   headers.set("client-info", JSON.stringify(clientInfo));
 
   return NextResponse.next({
