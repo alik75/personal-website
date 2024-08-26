@@ -4,6 +4,8 @@ import { ProjectItem } from "@/src/utils/interfaces";
 import Link from "next/link";
 import projects from "@/src/utils/projects.json";
 import { notFound } from "next/navigation";
+import ArrowIcon from "@/public/svg/ArrowIcon.svg";
+
 
 const ProjectPage = ({ params }: any) => {
   const currentProject: ProjectItem | undefined = projects.find(
@@ -39,18 +41,19 @@ const ProjectPage = ({ params }: any) => {
           <Link
             href={currentProject ? currentProject.url : "#"}
             target="_blank"
-            className="border-b border-white hover:border-yellow transition-all pb-3 group"
+            className="flex items-center gap-2 w-fit border-b border-white hover:border-yellow transition-all pb-1 group"
           >
             <span className="text-white group-hover:text-yellow transition-all">
               View Project
             </span>
+            <ArrowIcon className={"group-hover:[&>path]:fill-yellow transition-all"}></ArrowIcon>
           </Link>
         </div>
         <div>
           <span className="text-base text-white font-bold">Tech use:</span>
           <ul className="flex items-center flex-wrap gap-3 mt-4">
             {currentProject.techs.map((item: string, idx: number) => (
-              <li className="text-yellow text-sm font-bold border-yellow border rounded-md px-2 py-1">
+              <li className="text-yellow font-titillium text-sm border-yellow border rounded-md px-2 py-1">
                 {item}
               </li>
             ))}

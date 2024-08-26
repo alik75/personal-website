@@ -12,7 +12,7 @@ const ProjectsPage = () => {
       </h1>
       <div className="flex flex-row flex-wrap items-center justify-center gap-10">
         {projects.map((item: ProjectItem, idx: number) => (
-          <Link target="_blank" href={"/project/"+item.slug} className="relative md:w-96 md:h-96 w-56 h-56 rounded-3xl overflow-hidden group cursor-pointer">
+          <Link key={idx} href={"/project/"+item.slug} className="relative md:w-96 md:h-96 w-56 h-56 rounded-3xl overflow-hidden group cursor-pointer">
             <Image
               objectFit="cover"
               objectPosition="center"
