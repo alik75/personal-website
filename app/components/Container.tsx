@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { headers } from "next/headers";
 import StatisticInfo from "./StatisticInfo";
 import StatisticContainer from "./StatisticContainer";
+import { Toaster } from "react-hot-toast";
 
 interface Props {
   children: ReactNode;
@@ -18,7 +19,7 @@ const Container = ({ children }: Props) => {
         <StatisticContainer info={clientInfo}>
           {children}
         </StatisticContainer>
-       
+       <Toaster position="bottom-center" />
       </div>
       <Navbar></Navbar>
     </div>

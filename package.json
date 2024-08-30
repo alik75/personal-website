@@ -17,6 +17,7 @@
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.53.0",
+    "react-hot-toast": "^2.4.1",
     "resend": "^4.0.0",
     "yarn": "^1.22.22"
   },
