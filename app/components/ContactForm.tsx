@@ -7,7 +7,8 @@ import TextArea from "./TextArea";
 import ReCAPTCHA from "react-google-recaptcha"
 import { verifyCaptcha } from "@/actions/recaptcha"
 import { Resend } from "resend";
-import Email from "@/emails/contact";
+import toast from "react-hot-toast";
+import { sendEmail } from "@/actions/resend-email";
 
 interface FormValues {
   name: string;
@@ -15,7 +16,7 @@ interface FormValues {
   message: string;
 }
 
-const resend = new Resend('re_dGaiMGEs_NYdRZBhjWsubCbahJZP9HHET');
+
 
 const ContactForm = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null)
@@ -26,12 +27,8 @@ const ContactForm = () => {
   const data = watch();
   const onSubmit = async ({ name, email, message }: FormValues) => {
     console.log(data);
-    await resend.emails.send({
-      from: 'info@alikatiraei.com',
-      to: 'alikatiraie96@gmail.com',
-      subject: 'New contact message in alikatiraei.com',
-      react: <Email name={name} email={email} message={message} />,
-    });
+    sendEmail(name,email,message).then(()=>toast.success('Thanks! I be in touch with you as soon as possible.')).catch(()=>toast.error('Error in submit message!'));
+    
   };
 
   const handleCaptchaSubmission=async (token: string | null)=> {
@@ -51,6 +48,7 @@ const ContactForm = () => {
         <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
             ref={recaptchaRef}
+            theme="dark"
             onChange={handleCaptchaSubmission}
           />
         <Button className="w-full" disabled={!isVerified} label="Submit"></Button>
