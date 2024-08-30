@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Input from "./Input";
 import Button from "./Button";
 import TextArea from "./TextArea";
+import ReCAPTCHA from "react-google-recaptcha"
+import { verifyCaptcha } from "@/actions/recaptcha"
 
 interface FormValues {
   name: string;
@@ -12,10 +14,22 @@ interface FormValues {
 }
 
 const ContactForm = () => {
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
+  const [isVerified, setIsverified] = useState<boolean>(false)
+
   const methods = useForm<FormValues>();
   const { register, handleSubmit, watch, setValue } = methods;
   const data = watch();
-  const onSubmit = async ({ name, email, message }: FormValues) => {};
+  const onSubmit = async ({ name, email, message }: FormValues) => {
+    console.log(data);
+  };
+
+  const handleCaptchaSubmission=async (token: string | null)=> {
+    // Server function to verify captcha
+    await verifyCaptcha(token)
+      .then(() => setIsverified(true))
+      .catch(() => setIsverified(false))
+  }
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center gap-5">
@@ -24,7 +38,12 @@ const ContactForm = () => {
         <Input name="email" wrapperClassName="w-full" placeholder="Your Email Address">
         </Input>
         <TextArea name="message"  wrapperClassName="w-full" placeholder="Your Message"></TextArea>
-        <Button className="w-full" label="Submit"></Button>
+        <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+            ref={recaptchaRef}
+            onChange={handleCaptchaSubmission}
+          />
+        <Button className="w-full" disabled={!isVerified} label="Submit"></Button>
       </form>
     </FormProvider>
   );
